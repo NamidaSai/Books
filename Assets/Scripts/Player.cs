@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
         Vector2 walkVelocity = new Vector2(xThrow, yThrow);
 
         myRigidbody.velocity = walkVelocity;
+
         bool playerHasHorizontalSpeed = (Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon);
         myAnimator.SetBool("isWalking", playerHasHorizontalSpeed);
     }
