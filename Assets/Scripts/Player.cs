@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
         }
 
         if (targetObject == null) { return; }
-        
+
         HandleMovement();
         ResolveInteraction();
     }
@@ -29,15 +29,6 @@ public class Player : MonoBehaviour
         if (hit.collider == null) { return; }
 
         SetTargetObject(hit);
-    }
-
-    private void HandleMovement()
-    {
-        if (Vector2.Distance(transform.position, targetObject.transform.position) >= distanceToInteract)
-        {
-            float step = moveSpeed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, targetObject.transform.position, step);
-        }
     }
 
     private void SetTargetObject(RaycastHit2D hit) 
@@ -52,11 +43,34 @@ public class Player : MonoBehaviour
 
         targetObject = hit.transform.gameObject;
     }
+    private void HandleMovement()
+    {
+        if (Vector2.Distance(transform.position, targetObject.transform.position) >= distanceToInteract)
+        {
+            GetComponent<Animator>().SetBool("isWalking", true);
+            FlipSprite();
+            float step = moveSpeed * Time.deltaTime;
+            transform.position = Vector2.MoveTowards(transform.position, targetObject.transform.position, step);
+        }
+    }
 
+    private void FlipSprite()
+    {
+        float horizontalDistance = transform.position.x - targetObject.transform.position.x;
+        if (horizontalDistance >= 0)
+        {
+            transform.localScale = new Vector3(-1f,1f,1f);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1f,1f,1f);
+        }
+    }
     private void ResolveInteraction()
     {
         if (Vector2.Distance(transform.position, targetObject.transform.position) <= distanceToInteract)
         {
+            GetComponent<Animator>().SetBool("isWalking", false);
             targetObject.GetComponent<IRaycastable>().TriggerInteractionEvent();
             targetObject = null;
         }
