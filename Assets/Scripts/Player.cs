@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] float distanceToInteract = 1f;
     [SerializeField] float moveSpeed = 10f;
 
+    GameObject targetObject;
     Vector2 targetPosition;
 
     void Update()
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
         }
 
         HandleMovement();
+        ResolveInteraction();
     }
 
     private void HandleInteract()
@@ -25,9 +27,9 @@ public class Player : MonoBehaviour
 
         if (hit.collider == null) { return; }
 
-        GameObject targetObject = hit.transform.gameObject;
+        targetObject = hit.transform.gameObject;
 
-        InteractWithObject(targetObject);
+        InteractWithObject();
     }
 
     private void HandleMovement()
@@ -39,9 +41,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void InteractWithObject(GameObject targetObject) 
+    private void InteractWithObject() 
     {
         IRaycastable raycastable = targetObject.GetComponent<IRaycastable>();
+
         if (raycastable == null)
         {
            Debug.LogWarning("Interactable Object is missing IRaycastable component.");
@@ -49,7 +52,15 @@ public class Player : MonoBehaviour
         }
 
         targetPosition = targetObject.transform.position;
-        raycastable.OnClickEvent();
+    }
+
+    private void ResolveInteraction()
+    {
+        if (targetObject != null && (Vector2.Distance(transform.position, targetPosition) <= distanceToInteract))
+        {
+            targetObject.GetComponent<IRaycastable>().TriggerInteractionEvent();
+            targetObject = null;
+        }
     }
     
     private static Vector2 GetMouseRay()

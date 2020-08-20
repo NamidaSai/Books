@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour, IRaycastable
 {
-    public void OnClickEvent()
+    public void TriggerInteractionEvent()
     {
-        Debug.Log(gameObject.name + " has been clicked.");
+        Debug.Log(gameObject.name + " has been interacted with.");
     }
 
 }

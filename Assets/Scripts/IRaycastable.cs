@@ -1,4 +1,4 @@
 ﻿public interface IRaycastable 
 {
-    void OnClickEvent();
+    void TriggerInteractionEvent();
 }
