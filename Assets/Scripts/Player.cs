@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed = 10f;
 
     GameObject targetObject;
-    Vector2 targetPosition;
 
     void Update()
     {
@@ -17,6 +16,8 @@ public class Player : MonoBehaviour
             HandleInteract();
         }
 
+        if (targetObject == null) { return; }
+        
         HandleMovement();
         ResolveInteraction();
     }
@@ -27,23 +28,21 @@ public class Player : MonoBehaviour
 
         if (hit.collider == null) { return; }
 
-        targetObject = hit.transform.gameObject;
-
-        InteractWithObject();
+        SetTargetObject(hit);
     }
 
     private void HandleMovement()
     {
-        if (Vector2.Distance(transform.position, targetPosition) >= distanceToInteract)
+        if (Vector2.Distance(transform.position, targetObject.transform.position) >= distanceToInteract)
         {
             float step = moveSpeed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, step);
+            transform.position = Vector2.MoveTowards(transform.position, targetObject.transform.position, step);
         }
     }
 
-    private void InteractWithObject() 
+    private void SetTargetObject(RaycastHit2D hit) 
     {
-        IRaycastable raycastable = targetObject.GetComponent<IRaycastable>();
+        IRaycastable raycastable = hit.transform.gameObject.GetComponent<IRaycastable>();
 
         if (raycastable == null)
         {
@@ -51,12 +50,12 @@ public class Player : MonoBehaviour
            return;
         }
 
-        targetPosition = targetObject.transform.position;
+        targetObject = hit.transform.gameObject;
     }
 
     private void ResolveInteraction()
     {
-        if (targetObject != null && (Vector2.Distance(transform.position, targetPosition) <= distanceToInteract))
+        if (Vector2.Distance(transform.position, targetObject.transform.position) <= distanceToInteract)
         {
             targetObject.GetComponent<IRaycastable>().TriggerInteractionEvent();
             targetObject = null;
