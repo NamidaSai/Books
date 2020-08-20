@@ -5,7 +5,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -18,10 +17,16 @@ public class Player : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(GetMouseRay(), Vector2.zero);
 
-        if (hit.collider.tag == "Interactable")
+        IRaycastable raycastable = hit.transform.GetComponent<IRaycastable>();
+        
+        if (raycastable == null)
         {
-            Debug.Log(hit.collider.gameObject.name + " has been triggered.");
+            Debug.LogWarning("Interactable Object is missing IRaycastable component.");
+            return;
         }
+
+        raycastable.OnClickEvent();
+        
     }
     
     private static Vector2 GetMouseRay()
