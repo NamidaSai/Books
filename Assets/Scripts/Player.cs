@@ -47,32 +47,30 @@ public class Player : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, targetObject.transform.position) >= distanceToInteract)
         {
-            GetComponent<Animator>().SetBool("isWalking", true);
-            FlipSprite();
             float step = moveSpeed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, targetObject.transform.position, step);
+
+            GetComponent<Animator>().SetBool("isWalking", true);
+            FlipSprite();
         }
     }
 
     private void FlipSprite()
     {
         float horizontalDistance = transform.position.x - targetObject.transform.position.x;
-        if (horizontalDistance >= 0)
+        if (horizontalDistance != Mathf.Epsilon)
         {
-            transform.localScale = new Vector3(-1f,1f,1f);
-        }
-        else
-        {
-            transform.localScale = new Vector3(1f,1f,1f);
+            transform.localScale = new Vector3(-Mathf.Sign(horizontalDistance),1f,1f);
         }
     }
     private void ResolveInteraction()
     {
         if (Vector2.Distance(transform.position, targetObject.transform.position) <= distanceToInteract)
         {
-            GetComponent<Animator>().SetBool("isWalking", false);
             targetObject.GetComponent<IRaycastable>().TriggerInteractionEvent();
             targetObject = null;
+            
+            GetComponent<Animator>().SetBool("isWalking", false);
         }
     }
     
