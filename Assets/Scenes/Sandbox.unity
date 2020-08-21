@@ -496,6 +496,11 @@ PrefabInstance:
       propertyPath: solution
       value: SISTER
       objectReference: {fileID: 0}
+    - target: {fileID: 1279160154, guid: 0b32adfffa230404cbe5d733ff330d99, type: 3}
+      propertyPath: solvedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b6a5729aa0defa14696333e3dfa36de3,
+        type: 3}
     - target: {fileID: 1550785501, guid: 0b32adfffa230404cbe5d733ff330d99, type: 3}
       propertyPath: m_fontAsset
       value: 

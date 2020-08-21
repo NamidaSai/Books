@@ -9,6 +9,7 @@ public class CryptoBook : MonoBehaviour, IRaycastable
     [SerializeField] GameObject cryptoCanvas = null;
     [SerializeField] List<TMP_InputField> fields = null;
     [SerializeField] string solution = null;
+    [SerializeField] Sprite solvedSprite = null;
 
 
     private void Start() 
@@ -48,6 +49,7 @@ public class CryptoBook : MonoBehaviour, IRaycastable
     private void TriggerDecodedEvent()
     {
         Debug.Log("Crypto Book has been solved.");
+        GetComponent<SpriteRenderer>().sprite = solvedSprite;
         cryptoCanvas.SetActive(false);
     }
 }
