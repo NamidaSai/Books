@@ -44,6 +44,11 @@ public class Player : MonoBehaviour
            return;
         }
 
+        if (targetObject != null)
+        {
+            targetObject.GetComponent<Interactable>().TriggerInteractionEnd();
+        }
+
         targetObject = hit.transform.gameObject;
     }
     private void HandleMovement()
@@ -71,7 +76,6 @@ public class Player : MonoBehaviour
         if (Vector2.Distance(transform.position, targetObject.transform.position) <= distanceToInteract)
         {
             targetObject.GetComponent<IRaycastable>().TriggerInteractionEvent();
-            targetObject = null;
             
             GetComponent<Animator>().SetBool("isWalking", false);
         }

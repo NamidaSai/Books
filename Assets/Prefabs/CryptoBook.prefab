@@ -571,6 +571,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cryptoCanvas: {fileID: 1780469992}
+  fields: []
+  solution: 
+  solvedSprite: {fileID: 0}
 --- !u!1001 &380982361814962386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2248,6 +2251,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 22380634, guid: a9a96c4a84a4811429355df80413fa1c, type: 3}
+      propertyPath: m_Name
+      value: decrypt
+      objectReference: {fileID: 0}
+    - target: {fileID: 631431376, guid: a9a96c4a84a4811429355df80413fa1c, type: 3}
+      propertyPath: m_text
+      value: Decrypt
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307037760, guid: a9a96c4a84a4811429355df80413fa1c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307037761, guid: a9a96c4a84a4811429355df80413fa1c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2234961609067788100, guid: a9a96c4a84a4811429355df80413fa1c,
         type: 3}
       propertyPath: m_LocalPosition.x

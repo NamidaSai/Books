@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class CryptoBook : MonoBehaviour, IRaycastable
+public class CryptoBook : MonoBehaviour
 {
     [SerializeField] GameObject cryptoCanvas = null;
     [SerializeField] List<TMP_InputField> fields = null;
@@ -16,7 +16,8 @@ public class CryptoBook : MonoBehaviour, IRaycastable
     {
         DisableUI();
     }
-    public void TriggerInteractionEvent()
+
+    public void TriggerCryptoEvent()
     {
         cryptoCanvas.SetActive(true);
     }
