@@ -13,18 +13,27 @@ MonoBehaviour:
   m_Name: Level 1
   m_EditorClassIdentifier: 
   vocalPrompts:
-  - promptID: orange
-    promptText: That's a nice looking... orange thing.
+  - promptID: bedExamine
+    promptText: Maybe I should just go back to bed...
     promptAudio: {fileID: 0}
-  - promptID: blue
-    promptText: Oh yes, I like blue stuff!
+  - promptID: bedUnder
+    promptText: Just some dust and my old toys.
     promptAudio: {fileID: 0}
-  - promptID: flip
-    promptText: Flippity flip!
+  - promptID: bedLie
+    promptText: I wonder where my sister is, hope she's okay...
     promptAudio: {fileID: 0}
-  - promptID: crypto
-    promptText: An old dusty book... If only I could read it!
+  - promptID: erinBedExamine
+    promptText: This is Erin's bed.
+    promptAudio: {fileID: 0}
+  - promptID: erinBedUnder
+    promptText: Oh, an old book!
+    promptAudio: {fileID: 0}
+  - promptID: erinBedLie
+    promptText: Erin always sleeps in.
+    promptAudio: {fileID: 0}
+  - promptID: letterRead
+    promptText: I wonder what's written...
     promptAudio: {fileID: 0}
   - promptID: decrypt
-    promptText: Let's try this...
+    promptText: Ok, maybe I can figure this out, how hard can reading be?
     promptAudio: {fileID: 0}
