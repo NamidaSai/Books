@@ -19,9 +19,9 @@ public class Interactable : MonoBehaviour, IRaycastable
         {
             interaction.button.onClick.AddListener(() => TriggerSpeechEvent(interaction.id));
 
-            if (interaction.id == "decrypt" && GetComponent<CryptoBook>() != null)
+            if (interaction.id == "decrypt" && GetComponentInChildren<CryptoBook>() != null)
             {
-                interaction.button.onClick.AddListener(() => GetComponent<CryptoBook>().TriggerCryptoEvent());
+                interaction.button.onClick.AddListener(() => GetComponentInChildren<CryptoBook>().TriggerCryptoEvent());
             }
         }
     }

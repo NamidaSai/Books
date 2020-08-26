@@ -31,9 +31,54 @@ MonoBehaviour:
   - promptID: erinBedLie
     promptText: Erin always sleeps in.
     promptAudio: {fileID: 0}
-  - promptID: letterRead
-    promptText: I wonder what's written...
+  - promptID: shelfExamine
+    promptText: So many books to read! I wish I knew how to...
+    promptAudio: {fileID: 0}
+  - promptID: shelfPush
+    promptText: '*pushes* ENGH!'
+    promptAudio: {fileID: 0}
+  - promptID: photoExamine
+    promptText: 'We look so happy in that photo. So long ago... '
+    promptAudio: {fileID: 0}
+  - promptID: motherExamine
+    promptText: I miss mom. She always knew what to say when I'm feeling down.
+    promptAudio: {fileID: 0}
+  - promptID: standExamine
+    promptText: There's a letter there, with my name on it.
+    promptAudio: {fileID: 0}
+  - promptID: standUnder
+    promptText: Nothing but dust here...
     promptAudio: {fileID: 0}
   - promptID: decrypt
-    promptText: Ok, maybe I can figure this out, how hard can reading be?
+    promptText: Let's see what the letter says...
+    promptAudio: {fileID: 0}
+  - promptID: tapestryExamine
+    promptText: An old tapestry with a cool windmill on it.
+    promptAudio: {fileID: 0}
+  - promptID: tapestryPull
+    promptText: '*pulls* ERGH! Oh, a door behind it!'
+    promptAudio: {fileID: 0}
+  - promptID: rugExamine
+    promptText: I imagine that rug has been here forever. Kinda comforting.
+    promptAudio: {fileID: 0}
+  - promptID: rugFlip
+    promptText: Hold on a second, that symbol looks familiar...
+    promptAudio: {fileID: 0}
+  - promptID: doorOpen
+    promptText: It's locked.
+    promptAudio: {fileID: 0}
+  - promptID: tableExamine
+    promptText: Erin and I, we like to eat together. It's nice sharing that.
+    promptAudio: {fileID: 0}
+  - promptID: tableUnder
+    promptText: '*hides* Oh, that symbol, I think I know that one...'
+    promptAudio: {fileID: 0}
+  - promptID: tableFlip
+    promptText: '*tries to flip* I can''t! It''s too heavy!'
+    promptAudio: {fileID: 0}
+  - promptID: platesExamine
+    promptText: Two plates.
+    promptAudio: {fileID: 0}
+  - promptID: mugsExamine
+    promptText: Two mugs.
     promptAudio: {fileID: 0}
