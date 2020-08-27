@@ -36,6 +36,16 @@ public class Interactable : MonoBehaviour, IRaycastable
         Speech speech = FindObjectOfType<Speech>();
 
         speech.TriggerVocalPrompt(vocalPromptID);
+
+        CheckForExamineAnimation(vocalPromptID);
+    }
+
+    private void CheckForExamineAnimation(string vocalPromptID)
+    {
+        if (vocalPromptID.EndsWith("Examine"))
+        {
+            GetComponent<Animator>().SetTrigger("Examine");
+        }
     }
 
     public void TriggerInteractionEnd()

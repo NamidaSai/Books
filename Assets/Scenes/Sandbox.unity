@@ -4551,6 +4551,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 67174148, guid: a9a96c4a84a4811429355df80413fa1c, type: 3}
+      propertyPath: m_text
+      value: Open
+      objectReference: {fileID: 0}
     - target: {fileID: 327024042, guid: a9a96c4a84a4811429355df80413fa1c, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -4558,6 +4562,10 @@ PrefabInstance:
     - target: {fileID: 412905617, guid: a9a96c4a84a4811429355df80413fa1c, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 412905617, guid: a9a96c4a84a4811429355df80413fa1c, type: 3}
+      propertyPath: m_Name
+      value: open
       objectReference: {fileID: 0}
     - target: {fileID: 412905618, guid: a9a96c4a84a4811429355df80413fa1c, type: 3}
       propertyPath: m_AnchoredPosition.x

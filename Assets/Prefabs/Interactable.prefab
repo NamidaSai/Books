@@ -732,6 +732,7 @@ GameObject:
   - component: {fileID: 2234961609067788106}
   - component: {fileID: 2234961609067788101}
   - component: {fileID: 731351680897306449}
+  - component: {fileID: -2349678966441779042}
   m_Layer: 0
   m_Name: Interactable
   m_TagString: Interactable
@@ -870,3 +871,22 @@ MonoBehaviour:
     button: {fileID: 412905619}
   - id: flip
     button: {fileID: 22380636}
+--- !u!95 &-2349678966441779042
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2234961609067788105}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 31720c32454fd7c4380f088682c1ced4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
