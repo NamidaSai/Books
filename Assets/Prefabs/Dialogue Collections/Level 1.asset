@@ -82,3 +82,24 @@ MonoBehaviour:
   - promptID: mugsExamine
     promptText: Two mugs.
     promptAudio: {fileID: 0}
+  - promptID: fridgeOpen
+    promptText: Let's see if there's anything left to snack on...
+    promptAudio: {fileID: 0}
+  - promptID: fridgePush
+    promptText: ENGH! Too heavy!
+    promptAudio: {fileID: 0}
+  - promptID: soupExamine
+    promptText: That soup doesn't look very tasty. Wait, I know this sign.
+    promptAudio: {fileID: 0}
+  - promptID: soupEat
+    promptText: A girl's gotta eat, ya know.
+    promptAudio: {fileID: 0}
+  - promptID: milkExamine
+    promptText: Ew, that milk smells really bad.
+    promptAudio: {fileID: 0}
+  - promptID: milkDrink
+    promptText: I shouldn't drink this... Oh, what the hell. *drinks*
+    promptAudio: {fileID: 0}
+  - promptID: levelEnd
+    promptText: Quick, I need to find Erin before they do!
+    promptAudio: {fileID: 0}
