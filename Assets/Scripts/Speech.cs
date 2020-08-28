@@ -6,10 +6,24 @@ using TMPro;
 public class Speech : MonoBehaviour
 {
     [SerializeField] DialogueCollection dialogue = null;
-    [SerializeField] TextMeshProUGUI speechDisplay = null;
+    [SerializeField] GameObject speechDisplay = null;
+    [SerializeField] float readingTime = 5f;
 
+    private void Start() 
+    {
+        speechDisplay.SetActive(false);
+    }
+    
     public void TriggerVocalPrompt(string promptID)
     {
-        speechDisplay.text = dialogue.GetVocalPromptText(promptID);
+        speechDisplay.SetActive(true);
+        speechDisplay.GetComponentInChildren<TextMeshProUGUI>().text = dialogue.GetVocalPromptText(promptID);
+        StartCoroutine(WaitForReadingTime());
+    }
+
+    IEnumerator WaitForReadingTime()
+    {
+        yield return new WaitForSeconds(readingTime);
+        speechDisplay.SetActive(false);
     }
 }

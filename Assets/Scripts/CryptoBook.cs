@@ -34,6 +34,8 @@ public class CryptoBook : MonoBehaviour
             Debug.LogWarning("Solution has not been set.");
         }
 
+        if (FindObjectOfType<LevelController>().GetCodeIsDecrypted()) { return; }
+
         List<string> solutionCheck = new List<string>();
 
         foreach (TMP_InputField field in fields)
@@ -52,5 +54,6 @@ public class CryptoBook : MonoBehaviour
         Debug.Log("Crypto Book has been solved.");
         GetComponent<SpriteRenderer>().sprite = solvedSprite;
         cryptoCanvas.SetActive(false);
+        FindObjectOfType<LevelController>().SetCodeIsDecrypted(true);
     }
 }
