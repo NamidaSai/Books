@@ -18,6 +18,7 @@ public class Interactable : MonoBehaviour, IRaycastable
         foreach(Interaction interaction in interactions)
         {
             interaction.button.onClick.AddListener(() => TriggerSpeechEvent(interaction.id));
+            interaction.button.onClick.AddListener(() => TriggerInteractionAnimation(interaction.animationTrigger));
 
             if (interaction.id == "decrypt" && GetComponentInChildren<CryptoBook>() != null)
             {
@@ -36,21 +37,22 @@ public class Interactable : MonoBehaviour, IRaycastable
         Speech speech = FindObjectOfType<Speech>();
 
         speech.TriggerVocalPrompt(vocalPromptID);
-
-        CheckForExamineAnimation(vocalPromptID);
-    }
-
-    private void CheckForExamineAnimation(string vocalPromptID)
-    {
-        if (vocalPromptID.EndsWith("Examine"))
-        {
-            GetComponent<Animator>().SetTrigger("Examine");
-        }
     }
 
     public void TriggerInteractionEnd()
     {
         interactionUI.SetActive(false);
+    }
+
+    public void TriggerInteractionAnimation(string animationTrigger)
+    {
+        if (animationTrigger == "") { return; }
+        GetComponent<Animator>().SetTrigger(animationTrigger);
+    }
+
+    public void DisableCollider()
+    {
+        GetComponent<Collider2D>().enabled = false;
     }
 }
 
@@ -59,4 +61,5 @@ class Interaction
 {
     public string id = null;
     public Button button = null;
+    public string animationTrigger = null;
 }
