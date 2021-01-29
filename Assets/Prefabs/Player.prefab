@@ -505,4 +505,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: {fileID: 11400000, guid: 1e1bfbbb79a75ef4581719c49797b140, type: 2}
   speechDisplay: {fileID: 473265277}
-  readingTime: 4
+  readingTime: 5
